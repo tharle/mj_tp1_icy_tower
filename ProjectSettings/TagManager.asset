@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Plataform
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Plataform
+    uniqueID: 126833607
     locked: 0
