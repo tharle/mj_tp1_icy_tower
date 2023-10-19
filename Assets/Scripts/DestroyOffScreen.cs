@@ -5,11 +5,11 @@ using UnityEngine;
 public class DestroyOffScreen : MonoBehaviour
 {
     [SerializeField]
-    private Transform m_OffLimitScreen;
+    private GameObject m_OffLimitScreen;
 
     private void LateUpdate()
     {
-        if(transform.position.y < m_OffLimitScreen.position.y) 
+        if(m_OffLimitScreen != null && transform.position.y < m_OffLimitScreen.transform.position.y) 
         {
             Destroy(gameObject);
         }
