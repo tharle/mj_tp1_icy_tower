@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    private Vector2 m_OffsetVertical = new Vector2(0, 0.20f);
+    private Vector2 m_OffsetVertical = new Vector2(0, 0.24f);
     private Vector3 m_StartPosition;
     private PlataformSpawnner m_PltaformSpawnner;
 

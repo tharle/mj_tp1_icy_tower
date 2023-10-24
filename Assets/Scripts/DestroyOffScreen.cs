@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class DestroyOffScreen : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject m_OffLimitScreen;
 
-    private void LateUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(m_OffLimitScreen != null && transform.position.y < m_OffLimitScreen.transform.position.y) 
-        {
-            Destroy(gameObject);
-        }
+        if(collision.gameObject.layer == LayerMask.NameToLayer("PlataformGroup")) Destroy(collision.gameObject);
     }
 }

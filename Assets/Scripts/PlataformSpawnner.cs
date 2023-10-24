@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlataformSpawnner : MonoBehaviour
 {
@@ -16,9 +17,11 @@ public class PlataformSpawnner : MonoBehaviour
 
     public void SpawnNewPlataform()
     {
-        string newName = m_Plataforms[0].gameObject.name + "_lvl_" + m_stage;
+        string newName = m_Plataforms[0].gameObject.name + "_lvl_" + ++m_stage;
+
         GameObject newPlataformGameObject = Instantiate(m_Plataforms[0], transform.position, Quaternion.identity);
         newPlataformGameObject.name = newName;
+
         Debug.Log("SPAW NEW PLATAFORM");
     }
 }

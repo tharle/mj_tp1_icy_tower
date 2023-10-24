@@ -355,10 +355,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8191278589928299857}
   - component: {fileID: 5350813541351311832}
-  - component: {fileID: 9207679468026651943}
-  m_Layer: 7
+  - component: {fileID: 5149150742564048241}
+  m_Layer: 6
   m_Name: Stage_2
-  m_TagString: Untagged
+  m_TagString: PlataformGroup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,19 +392,33 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &9207679468026651943
-MonoBehaviour:
+--- !u!50 &5149150742564048241
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5762104546341088936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dc303d1e4ffad94e805a442a56b37c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OffLimitScreen: {fileID: 0}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7211425574476755634
 GameObject:
   m_ObjectHideFlags: 0
