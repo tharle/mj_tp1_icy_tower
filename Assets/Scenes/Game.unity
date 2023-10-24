@@ -5996,7 +5996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc303d1e4ffad94e805a442a56b37c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TagCible: PlataformGroup
 --- !u!61 &930338929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6587,7 +6586,7 @@ GameObject:
   - component: {fileID: 1481856438}
   - component: {fileID: 1481856437}
   - component: {fileID: 1481856439}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Stage_0
   m_TagString: PlataformGroup
   m_Icon: {fileID: 0}
