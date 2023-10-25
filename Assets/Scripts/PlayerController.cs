@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D m_Rigidbody;
     private BoxCollider2D m_BoxCollider;
+    private Animator m_Animator; 
 
     private bool m_LookingLeft = false;
     
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_BoxCollider = GetComponent<BoxCollider2D>();
+        m_Animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -39,6 +41,14 @@ public class PlayerController : MonoBehaviour
         VerifyAndFixPlayerBounds();
 
         Flip();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Destroyer"))
+        {
+            Die();
+        }
     }
 
 
@@ -67,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
         if(axisHorizontal != 0) m_LookingLeft = axisHorizontal < 0;
 
+        m_Animator.SetFloat("velocity_x", Math.Abs( velocity_x));
     }
 
     private void JumpPlayer()
@@ -106,5 +117,10 @@ public class PlayerController : MonoBehaviour
     private bool isGround()
     {
         return m_GroundCheckCollider.IsTouchingLayers(LayerMask.GetMask("Plataform"));
+    }
+
+    private void Die()
+    {
+        Debug.Log("DIE");
     }
 }
