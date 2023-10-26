@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(GameParameters.LayerNames.DESTROYER))
         {
-            Debug.Log("0");
             StartCoroutine(DoDie());
         }
     }
@@ -82,9 +81,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) { 
             if (isPlayerGround)
             {
-                Vector2 velocity = m_Rigidbody.velocity;
-                velocity.y = m_JumpSpeed;
-                m_Rigidbody.velocity = velocity;
+                // Vector2 velocity = m_Rigidbody.velocity;
+                // velocity.y = m_JumpSpeed;
+                m_Rigidbody.AddForce(Vector2.up * m_JumpSpeed, ForceMode2D.Impulse);
+                //m_Rigidbody.velocity = velocity;
             }
         }
     }
@@ -120,10 +120,8 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DoDie()
     {
 
-        Debug.Log("1");
         m_Animator.SetTrigger(GameParameters.AnimationPlayer.IS_DEAD);
         yield return new WaitForSeconds(2.8f);
-        Debug.Log("2");
         m_dead = true;
     }
 
