@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     private Animator m_Animator; 
 
     private bool m_LookingLeft = false;
-    
+    private bool m_die = false;
+
+
 
     private void Start()
     {
@@ -35,12 +37,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        MovePlayer();
-        if (Input.GetKeyDown(KeyCode.Space)) JumpPlayer();
+        if (!m_die)
+        {
+            bool isPlayerGround = IsGround();
+            m_Animator.SetBool("isGround", isPlayerGround);
+            MovePlayer(isPlayerGround);
+            JumpPlayer(isPlayerGround);
 
-        VerifyAndFixPlayerBounds();
+            VerifyAndFixPlayerBounds();
 
-        Flip();
+            Flip();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,10 +71,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void MovePlayer()
+    private void MovePlayer(bool isPlayerGround)
     {
         float speed = m_Speed;
-        if(!isGround()) speed /= 2;
+        if(!isPlayerGround) speed /= 2;
 
 
         float axisHorizontal = Input.GetAxis("Horizontal");
@@ -80,14 +87,16 @@ public class PlayerController : MonoBehaviour
         m_Animator.SetFloat("velocity_x", Math.Abs( velocity_x));
     }
 
-    private void JumpPlayer()
-    {
-        if (isGround())
-        {
-            Debug.Log("Add force up");
-            Vector2 velocity = m_Rigidbody.velocity;
-            velocity.y = m_JumpSpeed;
-            m_Rigidbody.velocity = velocity;
+    private void JumpPlayer(bool isPlayerGround)
+    {   
+        if (Input.GetKeyDown(KeyCode.Space)) { 
+            if (isPlayerGround)
+            {
+                Debug.Log("Add force up");
+                Vector2 velocity = m_Rigidbody.velocity;
+                velocity.y = m_JumpSpeed;
+                m_Rigidbody.velocity = velocity;
+            }
         }
     }
 
@@ -114,13 +123,17 @@ public class PlayerController : MonoBehaviour
         transform.transform.localScale = scale;
     }
 
-    private bool isGround()
+    private bool IsGround()
     {
         return m_GroundCheckCollider.IsTouchingLayers(LayerMask.GetMask("Plataform"));
     }
 
     private void Die()
     {
-        Debug.Log("DIE");
+        m_Animator.SetTrigger("die");
+        m_die = true;
     }
+
+
+    
 }
