@@ -21,4 +21,9 @@ public class GameParameters
     public class InputNames {
         public const string AXIS_HORIZONTAL = "Horizontal";
     }
+
+    public class SceneNames {
+        public const string MAIN_MENU = "MainMenu";
+        public const string GAME = "Game";
+    }
 }

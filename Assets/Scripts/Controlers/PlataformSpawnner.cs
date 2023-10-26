@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlataformSpawnner : MonoBehaviour
 {
@@ -19,7 +16,14 @@ public class PlataformSpawnner : MonoBehaviour
     {
         string newName = m_Plataforms[0].gameObject.name + "_lvl_" + ++m_stage;
 
-        GameObject newPlataformGameObject = Instantiate(m_Plataforms[0], transform.position, Quaternion.identity);
+        int randomIndex = GenerateRandomIndexPlataform();
+
+        GameObject newPlataformGameObject = Instantiate(m_Plataforms[randomIndex], transform.position, Quaternion.identity);
         newPlataformGameObject.name = newName;
+    }
+
+    private int GenerateRandomIndexPlataform()
+    {
+        return Random.Range(0, m_Plataforms.Length - 1);
     }
 }

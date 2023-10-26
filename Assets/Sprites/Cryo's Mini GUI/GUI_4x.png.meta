@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ba435b088657664e8e7daae45653d1d
+guid: 829a8195927e1c0418d4d03a26cae45a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,33 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -132,51 +106,59 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plataforms_0
+      name: GUI_4x_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 12
-        width: 32
-        height: 8
+        x: 384
+        y: 352
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d2382229f1a23041bfe09b6a51a061b
-      internalID: -89902250
+      spriteID: 68d6e1cae18fe1d4db8f4dc412e8a363
+      internalID: 895293928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plataforms_1
+      name: GUI_4x_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4
-        width: 32
-        height: 8
+        x: 1
+        y: 353
+        width: 95
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcfb83f2474db64aa8a6e3105c7a9bc
+      internalID: -477601503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_4x_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 353
+        width: 95
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +166,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76891e3431aef7949bb2d1818f2883d1
-      internalID: -151942395
+      spriteID: a99297b9fc17b53459a36016e24be3aa
+      internalID: -1402259630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_4x_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2050fb78cc3b72c45ab4f70f0b22dc0b
+      internalID: 1309676815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_4x_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32acf7cb8d580c47b3f7eaede08d699
+      internalID: 283997447
       vertices: []
       indices: 
       edges: []
@@ -193,7 +217,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d2b6a75842cedb948ad1334a8b233a1d
+    spriteID: 3ef7c1db89dad7543b44c2d610707fb2
     internalID: 0
     vertices: []
     indices: 
@@ -201,9 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      plataforms_0: -89902250
-      plataforms_1: -151942395
-      plataforms_2: -225579867
+      GUI_4x_0: 895293928
+      GUI_4x_1: -477601503
+      GUI_4x_2: -1402259630
+      GUI_4x_3: 1309676815
+      GUI_4x_4: 283997447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private Animator m_Animator; 
 
     private bool m_LookingLeft = false;
-    private bool m_die = false;
+    private bool m_dead = false;
     private Vector3 m_StartPosition;
 
 
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!m_die)
+        if (!m_dead)
         {
             bool isPlayerGround = IsGround();
             m_Animator.SetBool(GameParameters.AnimationPlayer.IS_GROUND, isPlayerGround);
@@ -56,7 +56,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(GameParameters.LayerNames.DESTROYER))
         {
-            Die();
+            Debug.Log("0");
+            StartCoroutine(DoDie());
         }
     }
 
@@ -116,10 +117,19 @@ public class PlayerController : MonoBehaviour
         return m_GroundCheckCollider.IsTouchingLayers(LayerMask.GetMask(GameParameters.LayerNames.PLATAFORM));
     }
 
-    private void Die()
+    private IEnumerator DoDie()
     {
+
+        Debug.Log("1");
         m_Animator.SetTrigger(GameParameters.AnimationPlayer.IS_DEAD);
-        m_die = true;
+        yield return new WaitForSeconds(2.8f);
+        Debug.Log("2");
+        m_dead = true;
+    }
+
+    public bool IsDead()
+    {
+        return m_dead;
     }
 
 
