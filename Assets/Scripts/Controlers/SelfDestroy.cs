@@ -15,16 +15,17 @@ public class SelfDestroy : MonoBehaviour
         m_Player = FindAnyObjectByType<PlayerController>();
     }
 
-    public void Update()
+    private void Update()
     {
-        // verifier la distance à chaque 2s
 
+        DetectAndDestroy();
     }
 
-    public void f() 
+    private void DetectAndDestroy() 
     {
         m_ElpseTime += Time.deltaTime;
-
+        
+        // optimization: ça evite faire le vérification chaque frame. 
         if (m_ElpseTime > m_FrequenceCheck)
         {
             m_ElpseTime = 0;

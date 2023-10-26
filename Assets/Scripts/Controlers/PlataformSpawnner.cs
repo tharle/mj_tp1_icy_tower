@@ -21,7 +21,5 @@ public class PlataformSpawnner : MonoBehaviour
 
         GameObject newPlataformGameObject = Instantiate(m_Plataforms[0], transform.position, Quaternion.identity);
         newPlataformGameObject.name = newName;
-
-        Debug.Log("SPAW NEW PLATAFORM");
     }
 }
