@@ -14,9 +14,10 @@ public class PlataformSpawnner : MonoBehaviour
 
     public void SpawnNewPlataform()
     {
-        string newName = m_Plataforms[0].gameObject.name + "_lvl_" + ++m_stage;
 
         int randomIndex = GenerateRandomIndexPlataform();
+        
+        string newName = m_Plataforms[randomIndex].gameObject.name + "_lvl_" + ++m_stage;
 
         GameObject newPlataformGameObject = Instantiate(m_Plataforms[randomIndex], transform.position, Quaternion.identity);
         newPlataformGameObject.name = newName;
@@ -24,6 +25,6 @@ public class PlataformSpawnner : MonoBehaviour
 
     private int GenerateRandomIndexPlataform()
     {
-        return Random.Range(0, m_Plataforms.Length - 1);
+        return Random.Range(6, m_Plataforms.Length - 1);
     }
 }
