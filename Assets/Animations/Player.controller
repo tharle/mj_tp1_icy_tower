@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: die
+    m_ConditionEvent: is_dead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5683560861532649653}
@@ -149,7 +149,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isGround
+    m_ConditionEvent: is_ground
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: velocity_x
@@ -183,13 +183,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: isGround
+  - m_Name: is_ground
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
-  - m_Name: die
+  - m_Name: is_dead
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -295,7 +295,7 @@ AnimatorStateTransition:
     m_ConditionEvent: velocity_x
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: isGround
+    m_ConditionEvent: is_ground
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3680854305928580483}
@@ -320,7 +320,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isGround
+    m_ConditionEvent: is_ground
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8415086910379054219}
@@ -345,7 +345,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isGround
+    m_ConditionEvent: is_ground
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8415086910379054219}

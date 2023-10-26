@@ -18,18 +18,23 @@ public class SelfDestroy : MonoBehaviour
     public void Update()
     {
         // verifier la distance à chaque 2s
+
+    }
+
+    public void f() 
+    {
         m_ElpseTime += Time.deltaTime;
 
-        if (m_ElpseTime > m_FrequenceCheck) 
+        if (m_ElpseTime > m_FrequenceCheck)
         {
             m_ElpseTime = 0;
             Vector3 playerPosition = m_Player.gameObject.transform.position;
             float distance = Vector3.Distance(playerPosition, gameObject.transform.position);
 
-            if (distance > m_DistanceMax) {
+            if (distance > m_DistanceMax)
+            {
                 Destroy(gameObject);
             }
         }
-
     }
 }

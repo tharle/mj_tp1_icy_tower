@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private bool m_LookingLeft = false;
     private bool m_die = false;
+    private Vector3 m_StartPosition;
 
 
 
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_BoxCollider = GetComponent<BoxCollider2D>();
         m_Animator = GetComponentInChildren<Animator>();
+        m_StartPosition = transform.position;
     }
 
     private void Update()
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if (!m_die)
         {
             bool isPlayerGround = IsGround();
-            m_Animator.SetBool("isGround", isPlayerGround);
+            m_Animator.SetBool(GameParameters.AnimationPlayer.IS_GROUND, isPlayerGround);
             MovePlayer(isPlayerGround);
             JumpPlayer(isPlayerGround);
 
@@ -52,23 +54,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Destroyer"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer(GameParameters.LayerNames.DESTROYER))
         {
             Die();
         }
-    }
-
-
-    private void MovePlayerByForce()
-    {
-        float axisHorizontal = Input.GetAxis("Horizontal");
-        Vector2 velocity = m_Rigidbody.velocity;
-        velocity.x = m_Speed * axisHorizontal;
-
-        m_Rigidbody.velocity = velocity;
-
-        if (axisHorizontal != 0) m_LookingLeft = axisHorizontal > 0;
-
     }
 
     private void MovePlayer(bool isPlayerGround)
@@ -77,14 +66,14 @@ public class PlayerController : MonoBehaviour
         if(!isPlayerGround) speed /= 2;
 
 
-        float axisHorizontal = Input.GetAxis("Horizontal");
+        float axisHorizontal = Input.GetAxis(GameParameters.InputNames.AXIS_HORIZONTAL);
         float velocity_x = axisHorizontal * speed * Time.deltaTime;
 
         transform.Translate(new Vector3(velocity_x, 0, 0));
 
         if(axisHorizontal != 0) m_LookingLeft = axisHorizontal < 0;
 
-        m_Animator.SetFloat("velocity_x", Math.Abs( velocity_x));
+        m_Animator.SetFloat(GameParameters.AnimationPlayer.VELOCITY_X, Math.Abs( velocity_x));
     }
 
     private void JumpPlayer(bool isPlayerGround)
@@ -92,7 +81,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) { 
             if (isPlayerGround)
             {
-                Debug.Log("Add force up");
                 Vector2 velocity = m_Rigidbody.velocity;
                 velocity.y = m_JumpSpeed;
                 m_Rigidbody.velocity = velocity;
@@ -125,12 +113,12 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGround()
     {
-        return m_GroundCheckCollider.IsTouchingLayers(LayerMask.GetMask("Plataform"));
+        return m_GroundCheckCollider.IsTouchingLayers(LayerMask.GetMask(GameParameters.LayerNames.PLATAFORM));
     }
 
     private void Die()
     {
-        m_Animator.SetTrigger("die");
+        m_Animator.SetTrigger(GameParameters.AnimationPlayer.IS_DEAD);
         m_die = true;
     }
 

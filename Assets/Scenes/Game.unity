@@ -4248,7 +4248,7 @@ GameObject:
   - component: {fileID: 432524903}
   - component: {fileID: 432524904}
   m_Layer: 10
-  m_Name: Model
+  m_Name: SpriteModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4365,7 +4365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492068971}
   m_Layer: 0
-  m_Name: LimitHorizontal
+  m_Name: HorizontalLimit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6507,7 +6507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268320959}
   m_Layer: 0
-  m_Name: LimitHorizontalLeft
+  m_Name: HorizontalLimitLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6784,7 +6784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746355970}
   m_Layer: 0
-  m_Name: LimitHorizontalRight
+  m_Name: HorizontalLimitRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

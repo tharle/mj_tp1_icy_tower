@@ -6,18 +6,12 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
     private GameObject m_ObjectToFollow;
-
-    /// <summary>
-    /// 
-    /// </summary>
     private Vector2 m_OffsetVertical = new Vector2(0, 0.24f);
-    private Vector3 m_StartPosition;
     private PlataformSpawnner m_PltaformSpawnner;
 
     private void Start()
     {
         m_PltaformSpawnner = FindAnyObjectByType<PlataformSpawnner>();
-        m_StartPosition = transform.position;
     }
 
     private void Update()

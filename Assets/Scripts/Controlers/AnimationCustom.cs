@@ -20,7 +20,6 @@ public class AnimationCustom : MonoBehaviour
     {
         if (!m_Translation.Equals(Vector3.zero))
         {
-            Debug.Log("TRANSLATION CHANGED");
             transform.Translate(m_Translation * Time.deltaTime);
             m_Translation = Vector3.zero;
         }
